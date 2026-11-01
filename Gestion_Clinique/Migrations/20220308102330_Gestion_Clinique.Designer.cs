@@ -161,13 +161,13 @@ namespace Gestion_Clinique.Migrations
                     b.HasOne("Gestion_Clinique.Models.Medecin", "Medecin")
                         .WithMany("RendezVous")
                         .HasForeignKey("MedecinId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("Gestion_Clinique.Models.Patient", "Patient")
-                        .WithMany()
+                        .WithMany("RendezVous")
                         .HasForeignKey("PatientId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Medecin");
@@ -195,6 +195,11 @@ namespace Gestion_Clinique.Migrations
                 });
 
             modelBuilder.Entity("Gestion_Clinique.Models.Medecin", b =>
+                {
+                    b.Navigation("RendezVous");
+                });
+
+            modelBuilder.Entity("Gestion_Clinique.Models.Patient", b =>
                 {
                     b.Navigation("RendezVous");
                 });

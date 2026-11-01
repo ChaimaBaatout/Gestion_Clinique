@@ -20,7 +20,7 @@ namespace Gestion_Clinique.Models
             Nom = nom;
         }
 
-        public int Id { get => Id; set => Id = value; }
-        public string Nom { get => Nom; set => Nom = value; }
+        public int Id { get => id; set => id = value; }
+        public string Nom { get => nom; set => nom = value; }
     }
 }

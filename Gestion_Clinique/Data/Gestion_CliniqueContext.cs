@@ -30,16 +30,16 @@ namespace Gestion_Clinique.Data
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<RendezVous>()
-                .HasKey(x => new { x.PatientId,x.MedecinId });
-            modelBuilder.Entity<RendezVous>()
                         .HasOne(bc => bc.Medecin)
                         .WithMany(b => b.RendezVous)
-                        .HasForeignKey(bc => bc.PatientId);
+                        .HasForeignKey(bc => bc.MedecinId)
+                        .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<RendezVous>()
                     .HasOne(bc => bc.Patient)
                     .WithMany(x => x.RendezVous)
-                    .HasForeignKey(bc => bc.MedecinId);
+                    .HasForeignKey(bc => bc.PatientId)
+                    .OnDelete(DeleteBehavior.Restrict);
 
 
 

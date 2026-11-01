@@ -48,8 +48,8 @@ namespace Gestion_Clinique.Models
         // GET: RendezVous/Create
         public IActionResult Create()
         {
-            ViewData["MedecinId"] = new SelectList(_context.Medecin, "Id", "Discriminator");
-            ViewData["PatientId"] = new SelectList(_context.Patient, "Id", "Discriminator");
+            ViewData["MedecinId"] = new SelectList(_context.Medecin, "Id", "Nom");
+            ViewData["PatientId"] = new SelectList(_context.Patient, "Id", "Nom");
             return View();
         }
 
@@ -66,8 +66,8 @@ namespace Gestion_Clinique.Models
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["MedecinId"] = new SelectList(_context.Medecin, "Id", "Discriminator", rendezVous.MedecinId);
-            ViewData["PatientId"] = new SelectList(_context.Patient, "Id", "Discriminator", rendezVous.PatientId);
+            ViewData["MedecinId"] = new SelectList(_context.Medecin, "Id", "Nom", rendezVous.MedecinId);
+            ViewData["PatientId"] = new SelectList(_context.Patient, "Id", "Nom", rendezVous.PatientId);
             return View(rendezVous);
         }
 
@@ -84,8 +84,8 @@ namespace Gestion_Clinique.Models
             {
                 return NotFound();
             }
-            ViewData["MedecinId"] = new SelectList(_context.Medecin, "Id", "Discriminator", rendezVous.MedecinId);
-            ViewData["PatientId"] = new SelectList(_context.Patient, "Id", "Discriminator", rendezVous.PatientId);
+            ViewData["MedecinId"] = new SelectList(_context.Medecin, "Id", "Nom", rendezVous.MedecinId);
+            ViewData["PatientId"] = new SelectList(_context.Patient, "Id", "Nom", rendezVous.PatientId);
             return View(rendezVous);
         }
 
@@ -121,8 +121,8 @@ namespace Gestion_Clinique.Models
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["MedecinId"] = new SelectList(_context.Medecin, "Id", "Discriminator", rendezVous.MedecinId);
-            ViewData["PatientId"] = new SelectList(_context.Patient, "Id", "Discriminator", rendezVous.PatientId);
+            ViewData["MedecinId"] = new SelectList(_context.Medecin, "Id", "Nom", rendezVous.MedecinId);
+            ViewData["PatientId"] = new SelectList(_context.Patient, "Id", "Nom", rendezVous.PatientId);
             return View(rendezVous);
         }
 

@@ -23,8 +23,8 @@ namespace Gestion_Clinique.Models
            
         }
         
-        public int CNSS { get => CNSS; set => CNSS = value; }
-        public string Date_Naissance { get => Date_Naissance; set => Date_Naissance = value; }
+        public int CNSS { get => cNSS; set => cNSS = value; }
+        public string Date_Naissance { get => date_Naissance; set => date_Naissance = value; }
        
     }
 }

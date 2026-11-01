@@ -3,6 +3,7 @@
     public class RendezVous
     {
       
+        private int id;
         private string date;
         private string heure;
         private bool valider;

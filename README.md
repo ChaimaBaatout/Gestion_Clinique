@@ -23,11 +23,10 @@ Pages de création, consultation, modification et suppression pour :
 
 - Il n'y a pas de page de connexion ni de contrôle d'accès.
 - Les mots de passe des utilisateurs ne sont pas chiffrés : ne pas utiliser de vraies données.
-- Des modèles sont à corriger avant de compiler et de lancer le projet : `RendezVous` utilise un champ `id` qui n'existe pas, et certaines propriétés de `Patient` et `Specialite` s'appellent elles-mêmes.
+- L'heure de début des horaires de travail n'est ni enregistrée ni affichée : seule l'heure de fin l'est.
+- Un médecin ou un patient qui a des rendez-vous ne peut pas être supprimé tant que ces rendez-vous existent.
 
 ## Lancer le projet
-
-Une fois les modèles corrigés :
 
 1. Ouvre `Gestion_Clinique.sln` dans Visual Studio.
 2. Crée la base de données dans la console du Gestionnaire de package :

@@ -90,13 +90,13 @@ namespace Gestion_Clinique.Migrations
                         column: x => x.MedecinId,
                         principalTable: "Utilisateur",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_RendezVous_Utilisateur_PatientId",
                         column: x => x.PatientId,
                         principalTable: "Utilisateur",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(
